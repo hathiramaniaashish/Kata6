@@ -1,12 +1,12 @@
-package toyproduct.models;
+package toyproducts.models;
 
-import toyproduct.Toy;
+import toyproducts.Toy;
 
-public class AmericanHelicopterToy implements Toy {
+public class AmericanCarToy implements Toy {
     final private Integer serialNumber;
-    final private String type = "helicopter";
+    final private String type = "car";
 
-    public AmericanHelicopterToy(Integer serialNumber) {
+    public AmericanCarToy(Integer serialNumber) {
         this.serialNumber = serialNumber;
     }
 
@@ -31,7 +31,7 @@ public class AmericanHelicopterToy implements Toy {
 
     @Override
     public String toString() {
-        return "AmericanHelicopterToy{" + "serialNumber=" + serialNumber + '}';
+        return "AmericanCarToy{" + "serialNumber=" + serialNumber + '}';
     }
     
 }

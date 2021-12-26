@@ -1,11 +1,17 @@
 package business;
 
-import toyproduct.Toy;
-import toys.SerialNumberGenerator;
+import toyproducts.Toy;
+import factories.ToyFactory;
 
-public abstract class ToyBusiness {
-    final public SerialNumberGenerator generator = new SerialNumberGenerator();
+public class ToyBusiness {
+    final private ToyFactory toyFactory;
+
+    public ToyBusiness(ToyFactory toyFactory) {
+        this.toyFactory = toyFactory;
+    }
     
-    public abstract Toy createToy(String type);
+    public Toy produceToy(String type) {
+        return toyFactory.produceToy(type);
+    }
     
 }

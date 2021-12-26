@@ -1,4 +1,4 @@
-package toyproduct;
+package toyproducts;
 
 public interface Toy {
     

@@ -1,16 +1,17 @@
 
-import branches.AmericanToyBusiness;
-import branches.AsianToyBusiness;
+import business.ToyBusiness;
+import factories.regionalfactories.AmericanToyFactory;
+import factories.regionalfactories.AsianToyFactory;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-import toyproduct.Toy;
+import toyproducts.Toy;
 
 public class Main {
 
     public static void main(String[] args) {
-        //AmericanToyBusiness business = new AmericanToyBusiness();
-        AsianToyBusiness business = new AsianToyBusiness();
+        //ToyBusiness business = new ToyBusiness(new AmericanToyFactory());
+        ToyBusiness business = new ToyBusiness(new AsianToyFactory());
         ArrayList<Toy> toys = new ArrayList<>();
 
         Scanner in = new Scanner(System.in);
@@ -20,7 +21,7 @@ public class Main {
             switch (line) {
                 case "car":
                 case "helicopter":
-                    toys.add(business.createToy(line));
+                    toys.add(business.produceToy(line));
                     System.out.println(
                             "Built toys: " + toys.stream()
                                     .map(c -> c.toString())
