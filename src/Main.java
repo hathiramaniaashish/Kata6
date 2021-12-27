@@ -1,6 +1,7 @@
 
 import business.ToyBusiness;
 import factories.regionalfactories.AmericanCarToyFactory;
+import factories.regionalfactories.AmericanSubmarineToyFactory;
 import factories.regionalfactories.AsianCarToyFactory;
 import factories.regionalfactories.AsianHelicopterToyFactory;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class Main {
         ToyBusiness business = new ToyBusiness();
         business.add("car", new AmericanCarToyFactory());
         business.add("helicopter", new AsianHelicopterToyFactory());
+        business.add("submarine", new AmericanSubmarineToyFactory());
         ArrayList<Toy> toys = new ArrayList<>();
 
         Scanner in = new Scanner(System.in);
@@ -23,6 +25,7 @@ public class Main {
             switch (line) {
                 case "car":
                 case "helicopter":
+                case "submarine":
                     toys.add(business.produceToy(line));
                     System.out.println(
                             "Built toys: " + toys.stream()

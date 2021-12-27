@@ -4,16 +4,14 @@ import componentfactories.ComponentFactory;
 import componentfactories.regionalcomponentfactories.AmericanComponentFactory;
 import toyproducts.Toy;
 import toyproducts.components.Engine;
-import toyproducts.components.RotorBlade;
 
-public class AmericanHelicopterToy implements Toy {
+public class AmericanSubmarineToy implements Toy {
     final private Integer serialNumber;
-    final private String type = "helicopter";
+    final private String type = "submarine";
     final private ComponentFactory factory;
     private Engine engine;
-    private RotorBlade rotorBlade;
 
-    public AmericanHelicopterToy(Integer serialNumber) {
+    public AmericanSubmarineToy(Integer serialNumber) {
         this.serialNumber = serialNumber;
         this.factory = new AmericanComponentFactory();
     }
@@ -41,12 +39,11 @@ public class AmericanHelicopterToy implements Toy {
     public void prepare() {
         System.out.printf("Preparing '%s' '%d'\n", type, serialNumber);
         engine = factory.createEngine();
-        rotorBlade = factory.createRotorBlade();
     }
 
     @Override
     public String toString() {
-        return "AmericanHelicopterToy{" + "serialNumber=" + serialNumber + '}';
+        return "AmericanSubmarineToy{" + "serialNumber=" + serialNumber + '}';
     }
     
 }
